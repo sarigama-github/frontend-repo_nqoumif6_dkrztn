@@ -10,19 +10,30 @@
     --font-mona: 'Mona Sans', system-ui, sans-serif;
     --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
     --font-manrope: 'Manrope', system-ui, sans-serif;
+
+    /* UHD • PVM palette */
+    --color-light-blue: #00BFFF;
+    --color-golden-yellow: #FFD700;
+    --color-black: #000000;
   }
 
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    color-scheme: light;
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-white text-black;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-light-blue) 30%, white);
+    color: var(--color-black);
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Lightweight motion utility placeholders (used by some UI libs) */
 @layer utilities {
   .animate-in {
     animation-name: animateIn;
